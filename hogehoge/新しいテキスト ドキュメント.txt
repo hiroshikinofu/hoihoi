@@ -1,0 +1,56 @@
+● pip install pyperclip
+#上のコマンドをコマンドプロンプトで実行
+
+Could not find a version that satisfies the requirement pyperrclip (from version
+s: )
+No matching distribution found for pyperrclip
+#上記のようなエラーが出る
+
+
+● pip install send2trash
+#上のコマンドをコマンドプロンプトで実行
+▼
+distributed 1.21.8 requires msgpack, which is not installed.
+#上記のようなエラーが出る
+▼
+グーグル先生に翻訳してもらうと「
+分散1.21.8がインストールされていないmsgpackを必要とし、」と言われる。
+▼
+「msgpackの1.21.8バージョンがない」と理解。
+msgpacを最新のものにバージョンアップさせるコマンドを叩くことに。
+▼
+pip install --upgrade msgpack
+▼
+無事msgpackはバージョンアップされ、その後最初つまずいたインストールを再度叩くとちゃんとインストールされるようになった。
+
+
+● pip install pyzmail
+#上のコマンドをコマンドプロンプトで実行
+
+Command "python setup.py egg_info" failed with error code 1 in C:\Users\PANASO~1\A
+ppData\Local\Temp\pip-install-6b_5ivvh\distribute\
+#上記のようなエラーが出る
+▼
+「Command "python setup.py egg_info" failed with error code 1」でグーグル先生に聞く
+▼
+pip install gensim がうまくいかない時の記事がヒットする
+https://qiita.com/mergit/items/93676a9878eb020db21b
+▼
+記事内に書いてある下記コマンドをコンソールで叩く
+pip install --upgrade setuptools
+▼
+インストールの処理が始まる（なんのインストール化は知らん）
+▼
+pip install pyzmail
+#上のコマンドをコマンドプロンプトで実行
+▼
+Command "python setup.py egg_info" failed with error code 1 in C:\Users\PANASO~1\AppData\Local\Temp\pip-install-aw2x4yj_\d
+istribute\
+＃上記エラーがでる
+
+register_loader_type(importlib_bootstrap.SourceFileLoader, DefaultProvider)
+    AttributeError: module 'importlib._bootstrap' has no attribute 'SourceFileLoader'
+
+    Could not find a version that satisfies the requirement importlib._bootstrap (from versions: )
+    No matching distribution found for importlib._bootstrap
+
