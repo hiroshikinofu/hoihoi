@@ -1,3 +1,4 @@
+
 #! python3
 # formFiller.py - フォームの自動入力
 
@@ -14,7 +15,7 @@ import pyautogui, time
 name_field = (565, 338)                 #1
 submit_button = (489, 661)              #2
 submit_button_color = (72, 137, 241)    #3
-submit_another_link = (760, 224)
+submit_another_link = (629, 262)
 
 #1 ブラウザ全画面時のName欄のx.y座標
 #2 ブラウザ全画面時の送信ボタンのx.y座標
@@ -30,7 +31,7 @@ pyautogui.PAUSE = 0.5       #4
 
 for person in form_data:                                             #5
     # ユーザがスクリプトを中断する機会を与える
-    print('>>>5秒間一時停止中。中断するにはctrl-cを押してください。<<<') #6
+    print('>>> 5秒間一時停止中。中断するにはctrl-cを押してください。<<<') #6
     time.sleep(5)                                                    #7
 
 #4 各関数を呼び出した後に0.5秒待て
@@ -42,14 +43,14 @@ for person in form_data:                                             #5
     while not pyautogui.pixelMatchesColor(submit_button[0], submit_button[1], submit_button_color):     #8
         time.sleep(0.5)     #9
 
-    print('{}の情報を入力中...'.format(person['name']))    #10
-    pyautogui.click(name_field[0], name_field[1])         #11
+        print('{}の情報を入力中...'.format(person['name']))    #10
+        pyautogui.click(name_field[0], name_field[1])         # 11
 
-    # Name欄を入力する
-    pyautogui.typewrite(person['name'] + '\t')            #12
+        # Name欄を入力する
+        pyautogui.typewrite(person['name'] + '\t')            #12
 
-    # Greatest Fear(s)欄を入力する
-    pyautogui.typewrite(person['fear'] + '\t')            #13
+        # Greatest Fear(s)欄を入力する
+        pyautogui.typewrite(person['fear'] + '\t')            #13
 
 
 #8 送信ボタンの座標と色が一致しなくなるまで、以下の処理を繰り返せ
@@ -59,15 +60,15 @@ for person in form_data:                                             #5
 #12 name欄に要素nameを入力し、その後「Tab」ボタンを入力、次の入力フォームを選択しろ
 #13 Greatest Fear(s)欄に要素fearを入力し、その後「Tab」ボタンを入力、次の入力フォームを選択しろ
 
-    # Source os Wizard Powers欄を選択する
-    if person['source'] == 'wand':                                  #14
-        pyautogui.typewrite(['down', '\t'])
-    elif person['source'] == 'amulet':                              #15
-        pyautogui.typewrite(['down', 'down', '\t'])
-    elif person['source'] == 'crystal ball':                        #16
-        pyautogui.typewrite(['down', 'down', 'down', '\t'])
-    elif person['source'] == 'money':                               #17
-        pyautogui.typewrite(['down', 'down', 'down', 'down', '\t'])
+            # Source os Wizard Powers欄を選択する
+        if person['source'] == 'wand':                                  #14
+            pyautogui.typewrite(['space', 'down', '\t'])
+        elif person['source'] == 'amulet':                              #15
+            pyautogui.typewrite(['space', 'down', 'down', '\t'])
+        elif person['source'] == 'crystal ball':                        #16
+            pyautogui.typewrite(['space', 'down', 'down', 'down', '\t'])
+        elif person['source'] == 'money':                               #17
+            pyautogui.typewrite(['space', 'down', 'down', 'down', 'down', '\t'])
 
 #14 もし変数parsonの要素「source」が、文字列downと等しい場合、
 #14 Wizard Powers欄のプルダウンで下キーを1度タイプし、Tabキーを入力して
@@ -85,17 +86,17 @@ for person in form_data:                                             #5
 #17 Wizard Powers欄のプルダウンで下キーを4度タイプし、Tabキーを入力して
 #17 次の入力フォームを選択しろ
 
-    # RoboCop欄を選択する
-    if person['robocop'] == 1:                                          #18
-        pyautogui.typewrite([' ', '\t'])
-    elif person['robocop'] == 2:                                        #19
-        pyautogui.typewrite(['right', '\t'])
-    elif person['robocop'] == 3:                                        #20
-        pyautogui.typewrite(['right', 'right', '\t'])
-    elif person['robocop'] == 4:                                        #21
-        pyautogui.typewrite(['right', 'right', 'right', '\t'])
-    elif person['robocop'] == 5:                                        #22
-        pyautogui.typewrite(['right', 'right', 'right', 'right','\t'])
+        # RoboCop欄を選択する
+        if person['robocop'] == 1:                                          #18
+            pyautogui.typewrite(['space', '\t'])
+        elif person['robocop'] == 2:                                        #19
+            pyautogui.typewrite(['space', 'right', '\t'])
+        elif person['robocop'] == 3:                                        #20
+            pyautogui.typewrite(['space', 'right', 'right', '\t'])
+        elif person['robocop'] == 4:                                        #21
+            pyautogui.typewrite(['space', 'right', 'right', 'right', '\t'])
+        elif person['robocop'] == 5:                                        #22
+            pyautogui.typewrite(['space', 'right', 'right', 'right', 'right','\t'])
 #18 もし変数personの要素robocopが、数値1と等しい場合、
 #18　RoboCop欄でスペースキーを1度入力後、tabキーを入力し、次の入力フォームを選択しろ
 
@@ -112,18 +113,18 @@ for person in form_data:                                             #5
 #22　RoboCop欄で右方向キーを4度入力後、tabキーを入力し、次の入力フォームを選択しろ
 
 
-    # Additional Comments欄を入力する
-    pyautogui.typewrite(person['comments'] + '\t')                      #23
+        # Additional Comments欄を入力する
+        pyautogui.typewrite(person['comments'] + '\t')                      #23
 
-    # Submitをクリックする
-    pyautogui.press('enter')                                            #24
+        # Submitをクリックする
+        pyautogui.press('enter')                                            #24
 
-    # 次のページが読み込まれるのを待つ
-    print('送信ボタンを押しました。')                                     #25
-    time.sleep(5)
+        # 次のページが読み込まれるのを待つ
+        print('送信ボタンを押しました。')                                     #25
+        time.sleep(5)
 
-    # Submit another responseリンクをクリックする
-    pyautogui.click(submit_another_link[0], submit_another_link[1])     #26
+        # Submit another responseリンクをクリックする
+        pyautogui.click(submit_another_link[0], submit_another_link[1])     #26
 
 #23 変数personの要素commentsをAdditional Comments欄に入力し、tabキーを入力しろ
 #24 Enterキーを入力しろ

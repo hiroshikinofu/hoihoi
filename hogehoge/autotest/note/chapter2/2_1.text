@@ -1,0 +1,32 @@
+﻿UIテストについてまとめ
+
+言語ごとに「テスティングフレームワーク」というものがある。
+
+>例えばpythonの場合
+>Pythonのテスティングフレームワークは、unittestとnoseっていう全部入りのやつが
+>2つあって、それぞれdjangoと組み合わせて使うことができる。
+>
+>Djangoでは、Railsでいうrailsコマンドみたいなエントリポイントは
+>manage.pyってやつになっている。
+▼元ソース
+「けんちゃんくんさんのWeb日記」
+[PythonのテスティングフレームワークとDjangoでテストメソッド単位での実行]
+2016-06-06 (Mon)更新
+(https://diary.shu-cream.net/2016/06/06/how-to-run-test-case-with-django-nose.html)
+
+【公式】26.4. unittest — ユニットテストフレームワーク
+https://docs.python.jp/3/library/unittest.html
+
+
+★ここで勉強しよう
+Python3でunittestを導入してみる
+https://cre8cre8.com/python/introduce-unittest.htm
+
+
+◆「テスティングフレームワーク」とは…
+▼元ソース
+(http://www.itmedia.co.jp/im/articles/1111/07/news184.html)
+ソフトウェアテストの自動実行プログラムの作成、
+テスト結果の自動判定や自動集計などの機能を提供するソフトウェアフレームワークのこと。
+現在ではxUnitとは別系統のユニットテスティングフレームワーク、
+あるいはユニットテスト以外のテストを適用領域とするテスティングフレームワークも登場している。
