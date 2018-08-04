@@ -16,6 +16,10 @@ class AnimeTest(unittest.TestCase):
 			anime.favorite(anime_title)
 		return anime
 
+		#変数animeに、リストanimeの値を入れる
+		#リストeasy_to_use_anime_titlesの値を、変数anime_titleに順次入れる間
+		#以下を繰り返せ
+
 	def test_single_call_favorite(self):
 		"""
 		favoriteメソッドを1回だけコールして正常に登録できたかテストする
