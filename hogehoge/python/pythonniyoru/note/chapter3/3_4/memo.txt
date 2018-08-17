@@ -1,0 +1,46 @@
+3.4 Scrapyでクローリング
+「Scrapy」というPythonのライブラリーを使ってクローリングを行う
+
+ただし、「Scrapy」を使うにあたって今までと違う点がある
+・Python3系のバージョンはリリースされていない
+　→Python2.7だと動くので、新たに「Python2.7」のインストールが必要
+　　※以後、Python2.7系と3.6系の複数のバージョンを使うため、インストール時に『「Register Extentions」を外す』設定が必要となってくる。
+以下URLの「３．Python2系をインストール」を参照
+(https://web.plus-idea.net/2017/02/python2-3-venv-virtualenv/)
+
+・１つのPC上に複数のPythonをインストールするため、プログラムの実行時などのタイミングで、それぞれのPythonのバージョン管理をする必要になる。また、Python3.6系(Anaconda3)インストール時に設定していた(というかAnaconda側で気を利かせてくれていた設定)「環境変数のPATHにこのバージョン(3.6系)のpython.exeが追加される設定」を行わなければいけない
+    ※設定済の(すでにPATHを通してある)ものについても設定を解除する必要があるため、
+下記URLページの「環境変数PATHを設定する」内容を利用し、「コントロールパネル>システムとセキュリティ>システム>システムの詳細設定>環境変数>Path」より、Anaconda3インストール時に設定された環境変数設定を解除(削除)する。
+以下URLの「環境変数PATHを設定する」を参照
+(https://www.pythonweb.jp/tutorial/install/index3.html)
+
+
+テキスト通り、準備が終わったので、以下のコマンドを叩いて「Scrapy」を起動させる
+
+"py -2 -m  scrapy crawl article"
+
+
+https://blog.mudatobunka.org/entry/2016/08/28/144711
+
+
+が、以下のインポートエラーが出てしまい、起動失敗となる
+
+「ImportError: No module named win32api」
+
+
+下記参照ページにもある通り、Scrapyを起動させるためにはTwistedのバグ対処も行わなければいけないため、「win32api」を(仮想環境下のPython2.7上で)インストールさせる必要があります。
+以下URLの「環境変数PATHを設定する」を参照
+(Scrapy のクローリング中に win32api が無くてコケる問題に対処(Windows10, 64bit, Python2.7))
+
+
+
+仮想環境下で、以下のコマンドをコマンドプロンプト上で打ち、 Python2系上にpywin32のインストールを行う。
+
+"py -2 -m pip install pywin32"
+
+インストール処理が進み「Successfully installed」(訳：正常にインストールされました)と表示されればインストール完了。
+
+もう一度以下のコマンドを「wikiSpider」ディレクトリー上で叩けば、今度はちゃんとScrapyが動いてくれる(はず...)
+
+"py -2 -m  scrapy crawl article"
+

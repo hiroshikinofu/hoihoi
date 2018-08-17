@@ -1,5 +1,3 @@
-# 「http://oreilly.com」のページを開き、見つかった外部リンクを出力する
-
 from urllib.request import urlopen
 from urllib.error import HTTPError
 from urllib.parse import urlparse
